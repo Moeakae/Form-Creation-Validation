@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
         massage.push("Username must be at least 3 characters long.");
     }
     // Email validation
-    if (!email.include("@") ||!email.include(".")) {
-        isValid = false;
-    massage.push("Email must contain '@' and '.'");
-    }
+    if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-ZA-Z]{2.7}$/.test(emailInput.value)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        return;
+    } else { 
+        emailError.textContent;
     //Password validation
     if (passsword.length < 8) {
         isValid = false;
